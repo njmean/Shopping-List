@@ -1,0 +1,2 @@
+npm init   - Take defaults / appropriate license and description   start point is server.js
+npm install express body-parser mongoose concurrently
