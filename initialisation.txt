@@ -5,3 +5,18 @@ npm install -D nodemon
 Add start script to package.json as "start" : "node server.js"
 and "server": "nodemon server.js"
 Create server.js 
+
+// Client  in client diractory
+if not already installed then ::  npm install -G create-react-app
+npm create-react-app .
+add "proxy" to client package.json
+
+add "client" : "npm start --prefix client"  to server package.json scripts
+add "dev": "concurrently \"npm run server\" \"npm run client\""  to server package.json script
+add "client-install": "npm install --prefix client" to server package.json script
+
+
+Will need to tidy react remove index.css and logo.svg and references
+also clear out app.css
+
+in client folder npm install bootstrap reactstrap uuid react-transition-group
