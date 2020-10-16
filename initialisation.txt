@@ -20,3 +20,4 @@ Will need to tidy react remove index.css and logo.svg and references
 also clear out app.css
 
 in client folder npm install bootstrap reactstrap uuid react-transition-group
+in client npm install redux react-redux redux-thunk
