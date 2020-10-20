@@ -21,3 +21,7 @@ also clear out app.css
 
 in client folder npm install bootstrap reactstrap uuid react-transition-group
 in client npm install redux react-redux redux-thunk
+in client npm install axios
+
+In server install heroku-cli   then heroku login  / heroku create  / 
+
