@@ -17,11 +17,11 @@ app.use(bodyParser.json());
 
 // MongoDB from MongoDB Atlas
 
-if (exists(env.MONGO_URI)) {
-    const db = MONGO_URI;
-} else {
+let db = process.env.MONGO_URI;
 
-const db = require('./config/keys').mongoURI;
+if (typeof db !== 'undefined') {
+ 
+    let db = require('./config/keys').mongoURI;
 }
 // Connect to MongoDB
 
@@ -37,7 +37,7 @@ app.use('/api/items', items);
 
 // Serve static assets if in production
 
-if(process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {
 
     // set static folder
     app.use(express.static('client/build'));
