@@ -17,12 +17,9 @@ app.use(bodyParser.json());
 
 // MongoDB from MongoDB Atlas
 
-let db = process.env.MONGO_URI;
-
-if (typeof db !== 'undefined') {
  
     let db = require('./config/keys').mongoURI;
-}
+
 // Connect to MongoDB
 
 mongoose
