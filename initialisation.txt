@@ -23,5 +23,17 @@ in client folder npm install bootstrap reactstrap uuid react-transition-group
 in client npm install redux react-redux redux-thunk
 in client npm install axios
 
-In server install heroku-cli   then heroku login  / heroku create  / 
+In server install heroku-cli   then heroku login  / heroku create  / heroku git:remote -a  {name from Heroku }   [if nec create git first]
+
+To create Git and add to heroku
+
+git add .
+git commit -am "Make it Better"
+git push heroku master
+
+if already have git set up
+
+heroku git:remote -a  {name from Heroku} 
+git push heroku master
+
 

@@ -17,8 +17,12 @@ app.use(bodyParser.json());
 
 // MongoDB from MongoDB Atlas
 
-const db = require('./config/keys').mongoURI;
+if (exists(env.MONGO_URI)) {
+    const db = MONGO_URI;
+} else {
 
+const db = require('./config/keys').mongoURI;
+}
 // Connect to MongoDB
 
 mongoose
