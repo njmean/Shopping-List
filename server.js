@@ -1,7 +1,7 @@
 // Import dependancies
 const express = require('express');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
+//const bodyParser = require('body-parser');
 const path = require('path');
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
@@ -14,9 +14,11 @@ const items = require('./routes/api/items');
 
 const app = express();
 
-// BodyParser Middleware
+// BodyParser Middleware  can now just use express
 
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
+
+app.use(express.json());
 
 // MongoDB from MongoDB Atlas
 
@@ -25,10 +27,11 @@ app.use(bodyParser.json());
 
   const db = process.env.MONGO_URI;
 
+
 // Connect to MongoDB
 
 mongoose
-    .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
+    .connect(db, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
     .then(() => console.log('MongoDB connected...'))
     .catch(err => console.log(err));
 
@@ -36,6 +39,8 @@ mongoose
 // routes
 
 app.use('/api/items', items);
+app.use('/api/users',require('./routes/api/users'))
+app.use('/api/auth',require('./routes/api/auth'))
 
 // Serve static assets if in production
 
