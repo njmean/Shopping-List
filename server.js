@@ -3,6 +3,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+  }
 
 const items = require('./routes/api/items');
 
@@ -18,7 +21,9 @@ app.use(bodyParser.json());
 // MongoDB from MongoDB Atlas
 
  
-    let db = require('./config/keys').mongoURI;
+  //  let db = require('./config/keys').mongoURI;
+
+  const db = process.env.MONGO_URI;
 
 // Connect to MongoDB
 
