@@ -36,4 +36,6 @@ if already have git set up
 heroku git:remote -a  {name from Heroku} 
 git push heroku master
 
+Need to Id way to get db from env variable so keys no in github (even if blocked)
+
 
